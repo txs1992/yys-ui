@@ -1,0 +1,16 @@
+{
+  "name": "yys-ui",
+  "version": "0.0.1",
+  "description": "基于 element-ui 封装的一些业务组件",
+  "main": "src/index.js",
+  "repository": "https://github.com/txs1992/yys-ui.git",
+  "author": "陶旭生 <xusheng.txs@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  },
+  "peerDependencies": {
+    "element-ui": "^2.13.0",
+    "vue": "^2.6.11"
+  }
+}
