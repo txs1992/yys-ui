@@ -1,13 +1,13 @@
 {
-  "name": "sticky",
-  "version": "0.0.4-alpha.0",
+  "name": "@yys-ui/sticky",
+  "version": "0.0.1",
   "description": "",
   "main": "src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "taoxusheng <xusheng.txs@gmail.com>",
   "license": "MIT",
   "gitHead": "611eb66494c0e8ccfe5bc0faa780dfc7e1fc13f1"
 }
