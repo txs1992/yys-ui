@@ -1,7 +1,9 @@
 import Vue from "vue";
 import App from "./app.vue";
+import router from "./router";
 
 export default new Vue({
   el: "#app",
-  render:(h: any) =>  h(App)
+  router,
+  render: (h: any) => h(App)
 });
