@@ -1,5 +1,5 @@
 <template>
-  <div class="app">Welcome To Typescript, and your name is {{ name }}.</div>
+  <div class="app">Welcome To Typescript {{ name }}.</div>
 </template>
 
 <script lang="ts" src="./app.ts">
