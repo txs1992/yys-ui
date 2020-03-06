@@ -1,12 +1,19 @@
 var path = require("path");
 var webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const VueLoaderPlugin = require("vue-loader/lib/plugin");
 
+function resolve(dir) {
+  return path.resolve(__dirname, "..", dir);
+}
+
 module.exports = {
+  mode: "development",
   entry: "./examples/index.ts",
   output: {
-    path: path.resolve(__dirname, "./dist"),
-    publicPath: "/dist/",
+    path: resolve("dist"),
+    publicPath: "/",
     filename: "build.js"
   },
   module: {
@@ -46,7 +53,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", 'sass-loader']
+        use: ["vue-style-loader", "css-loader", "sass-loader"]
       }
     ]
   },
@@ -57,36 +64,29 @@ module.exports = {
     }
   },
   devServer: {
-    historyApiFallback: true,
-    noInfo: true
+    hot: true,
+    open: true,
+    port: 8000,
+    overlay: true,
+    publicPath: "/",
+    historyApiFallback: true
   },
   performance: {
     hints: false
   },
-  devtool: "#eval-source-map",
+  devtool: "inline-source-map",
   plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      title: "Development",
+      filename: "index.html",
+      template: "./examples/index.html"
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      minimize: true
+    }),
     // make sure to include the plugin for the magic
     new VueLoaderPlugin()
   ]
 };
-
-if (process.env.NODE_ENV === "production") {
-  module.exports.devtool = "#source-map";
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ]);
-}
