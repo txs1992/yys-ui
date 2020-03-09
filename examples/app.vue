@@ -23,10 +23,12 @@ body,
 }
 
 .yys-app {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   padding: 20px 10px;
   height: 100%;
   background: #f1f1f1;
+
   .menus {
     font-size: 24px;
     font-weight: bold;
@@ -42,9 +44,10 @@ body,
       }
     }
   }
+
   .container {
+    flex: 1;
     margin-top: 10px;
-    height: 90%;
   }
 }
 </style>
