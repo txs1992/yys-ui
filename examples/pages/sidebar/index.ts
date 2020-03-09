@@ -1,5 +1,5 @@
 import { Vue, Component } from "vue-property-decorator";
-import YysSidebar from "@packages/sidebar/src/index.vue";
+import YysSidebar from "../../../dist/yys-ui";
 
 @Component({
   components: {
