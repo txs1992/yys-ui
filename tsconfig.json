@@ -35,7 +35,8 @@
   },
   "include": [
     "packages/**/*",
-    "typings/**/*"
+    "typings/**/*",
+    "examples/**/*"
   ],
   "exclude": [
     "packages/*/src/**/__tests__",

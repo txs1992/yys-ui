@@ -8,7 +8,7 @@
   "author": "陶旭生 <xusheng.txs@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack",
+    "build": "rollup -c rollup.config.js",
     "start": "webpack-dev-server --inline --progress --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +17,7 @@
     "packages/*"
   ],
   "devDependencies": {
+    "@babel/core": "^7.8.7",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.4.2",
     "element-ui": "^2.13.0",
@@ -24,6 +25,10 @@
     "lerna": "^3.20.2",
     "node-sass": "^4.13.1",
     "rollup": "^2.0.2",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^2.4.0",
     "rollup-plugin-terser": "^5.2.0",
     "rollup-plugin-typescript": "^1.0.1",
     "rollup-plugin-typescript2": "^0.26.0",

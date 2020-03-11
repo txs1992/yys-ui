@@ -76,7 +76,6 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: "inline-source-map",
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
