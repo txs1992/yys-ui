@@ -1,6 +1,6 @@
 import { Vue, Component, Prop, Watch } from "vue-property-decorator";
 
-export declare class YysSidebar extends Vue {
+export declare class Sidebar extends Vue {
   // Determine whether to expand
   visible: boolean;
 
@@ -11,16 +11,14 @@ export declare class YysSidebar extends Vue {
   placement: string;
 }
 
-const NAME = "yys-sidebar";
 const DEFAULT_ICON = "triangle-";
-@Component({
-  name: NAME
-})
-export default class Sidebar extends Vue {
+@Component
+export default class YysSidebar extends Vue {
   @Prop(Boolean) readonly visible!: boolean;
   @Prop({ type: String, default: "300px" }) readonly width!: boolean;
   @Prop({ type: String, default: "left" }) readonly placement!: boolean;
 
+  [x: string]: any;
   contentEL: any = null;
   parentPosition: string = "";
 
@@ -69,9 +67,5 @@ export default class Sidebar extends Vue {
   beforeDestory() {
     const parentEl: any = this.$el.parentElement;
     parentEl.style.position = this.parentPosition;
-  }
-
-  install(Vue: any) {
-    Vue.Component(Sidebar.name, Sidebar);
   }
 }

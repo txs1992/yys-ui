@@ -8,6 +8,7 @@ const typescript = require("rollup-plugin-typescript");
 const terser = require("rollup-plugin-terser").terser;
 
 const buildPlugins = [
+  vue(),
   resolve({
     browser: true
   }),
@@ -17,7 +18,6 @@ const buildPlugins = [
   }),
   commonjs(),
   typescript(),
-  vue(),
   postcss({
     extensions: [".css", ".scss"]
   }),
@@ -26,14 +26,14 @@ const buildPlugins = [
 
 const inputFileList = [
   {
-    path: "packages/yys-ui/src/index.ts",
-    name: "YysUI",
-    bundleNmae: "yys-ui"
-  },
-  {
-    path: "packages/sidebar/src/index.vue",
+    path: "packages/sidebar/index.ts",
     name: "YysSidebar",
     bundleNmae: "sidebar"
+  },
+  {
+    path: "packages/yys-ui/index.ts",
+    name: "YysUI",
+    bundleNmae: "yys-ui"
   }
 ];
 

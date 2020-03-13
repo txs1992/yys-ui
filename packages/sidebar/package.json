@@ -2,7 +2,7 @@
   "name": "@yys-ui/sidebar",
   "version": "0.0.1",
   "description": "",
-  "main": "dist/sidebar.min.js",
+  "main": "dist/sidebar.js",
   "typings": "typings/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

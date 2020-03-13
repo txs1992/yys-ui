@@ -1,17 +1,21 @@
-import Vue from "vue";
-import { YysUIComponent } from "./component";
+import Vue, { PluginObject } from "vue";
 
 import { YysSidebar } from "./sidebar";
 
+/** The version of element-ui */
+export const version: string;
+
 export interface InstallationOptions {
-  locale: any,
-  i18n: any,
-  size: string
+  locale: any;
+  i18n: any;
+  size: string;
 }
 
-export function install (vue: typeof Vue, options: InstallationOptions): void
+/**
+ * Install all element-ui components into Vue.
+ * Please do not invoke this method directly.
+ * Call `Vue.use(ElementUI)` to install.
+ */
+export function install(vue: typeof Vue, options: InstallationOptions): void;
 
-/** YysUI component common definition */
-export type Component = YysUIComponent
-
-export class Sidebar extends YysSidebar {}
+export { YysSidebar };
