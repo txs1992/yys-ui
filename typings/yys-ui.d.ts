@@ -1,4 +1,4 @@
-import Vue, { PluginObject } from "vue";
+import Vue from "vue";
 
 import { YysSidebar } from "./sidebar";
 
